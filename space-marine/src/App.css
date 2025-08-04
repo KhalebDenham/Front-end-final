@@ -1,8 +1,9 @@
 .myTable {
   width: 100%;
   border-collapse: collapse; /* Ensures clean cell spacing */
-  background-color: crimson;
+  background-color: green;
   border: 1px solid black;
+  color: white
 }
 
 .myTable th,
@@ -13,7 +14,7 @@
 }
 
 .myTable thead {
-  background-color: crimson;
+  background-color: green;
   font-weight: bold;
 }
 
@@ -22,16 +23,45 @@
   flex-direction: column;
   width: 100%;
   align-items: center;
-  background-color: burlywood;
+  background-color: green;
   border: 1px solid black;
+  color: white;
   padding: 5px;
   border-collapse: collapse;
 }
 
 .mainHeaderHome {
- width: 100%;
+  width: 100%;
   border-collapse: collapse; /* Ensures clean cell spacing */
-  background-color: crimson;
+  background-color: green;
+  color: white;
   border: 1px solid black;
 }
 
+.quickswap {
+  color: black;
+  background-color: black;
+}
+
+.quickswap button:hover {
+  color: green;
+  background-color: white;
+}
+
+.quickswap button a:visited {
+  color: green;
+  background-color: white;
+}
+
+.entry body {
+  color: green;
+  background-color: green;
+}
+
+.alert-primary {
+  color: green;
+}
+
+.entry {
+  background-color: green;
+}

@@ -1,5 +1,6 @@
 .movieListWrapper {
-    background-color: rgb(15, 70, 61);
+    background-color: green;
+    color: white;
     display: flex;
     flex-direction: row;
     overflow: scroll;

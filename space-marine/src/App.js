@@ -36,7 +36,7 @@ export default function App() {
     saint: false,
   });
 
-  function handleName(nameValue) {
+  function handleName(nameValue) { //handles name of the new marine
     console.log(nameValue);
     setNewMarine({
       ...newMarine,
@@ -44,40 +44,40 @@ export default function App() {
     });
     console.log(newMarine);
   }
-  function handleSaint(isChecked) {
+  function handleSaint(isChecked) { //handles sainthood of the new marine
     setNewMarine({
       ...newMarine,
       saint: isChecked,
     });
   }
 
-  function handleRank(rankValue) {
+  function handleRank(rankValue) { //handles rank of the new marine
     setNewMarine({
       ...newMarine,
       rank: rankValue,
     });
   }
 
-  function handleChapter(chapterValue) {
+  function handleChapter(chapterValue) { //handles chapter of the new marine
     setNewMarine({
       ...newMarine,
       chapter: chapterValue,
     });
   }
 
-  useEffect(() => {
+  useEffect(() => { //renders once to not allow for constant re-render of getMarines
     fetch(API_URL)
       .then((resp) => resp.json())
       .then((resp) => setMarines(resp));
   }, []);
 
-  function getMarine() {
+  function getMarine() { //gets available marines 
     console.log("Getting Marines");
     fetch(API_URL)
       .then((resp) => resp.json())
       .then((resp) => setMarines(resp));
   }
-  function handleUpdatedName(updatedNameValue) {
+  function handleUpdatedName(updatedNameValue) { //handles the updated name for the marine
     setUpdatedName(updatedNameValue);
   }
 
@@ -114,30 +114,30 @@ export default function App() {
   const posts = [
     {
       id: 1,
-      title: "My first post",
+      title: "First Entry",
       date: "7/12/25",
       content:
         "As I stared through Abaddon’s eyes, I confess I expected the triteness of some knightly oath, or a final murmur in the Emperor’s name. Instead, the ruined thing that had been First Captain of the Imperial Fists and High Marshal of the Black Templars spoke through a mouthful of blood, committing the last of his life to biting off each word, ensuring he spoke each one in shivering, sanguine clarity. You will die as your weakling father died. Soulless. Honourless. Weeping. Ashamed. Sigismunds last word was also his last breath. It sighed out of his mouth, taking his soul with it.",
     },
     {
       id: 2,
-      title: "Second post",
+      title: "Second Entry",
       date: "7/13/25",
       content: "All we have left between us is that we will die together! I AM RYLANOR OF THE EMPEROR'S CHILDREN, ANCIENT OF RITES, VENERABLE OF THE PALATINE HOST, AND PROUD SERVANT OF THE EMPEROR OF MANKIND, BELOVED BY ALL! I REJECT YOU NOW AND ALWAYS!",
     },
     {
       id: 3,
-      title: "Third post",
+      title: "Third Entry",
       date: "7/11/25",
       content: "Courage and Honor, Courage and Honor, Courage and Honor. I hear you murmur these words in the mist. In their wake I hear your hearts beat faster with false conviction, seeking to convince yourselves that a brave death has meaning. There is no courage to be found here, my nephews; no honor to be had. Your souls will join the trillion others in the mist, shrieking uselessly into eternity, weeping for the empire you could not save. To the unfaithful I bring holy plagues ripe with enlightenment. To the devout I bring the blessing of immortality through the gifts of sacred rot. And to you... you born sons of Guilliman... to you flesh-crafted puppets of a failing Imperium, I bring the holiest gift of all... sssiiiiiiiiillence.",
     },
   ];
 
   return (
-    <Container className="wholePage">
+    <Container className="wholePage" >
       <Router>
         <div>
-          <ButtonGroup>
+          <ButtonGroup className="quickswap">
             <Button variant="outline-secondary">
               <Link to="/">Home</Link>
             </Button>
@@ -172,7 +172,7 @@ export default function App() {
               </Card>
             </Route>
             <Route path="/">
-              <h4>Welcome to the Website and My Final!</h4>
+              <h4 className="mainHeaderHome">Welcome to the Website and My Final!</h4>
               <MovieList/>
             </Route>
           </Switch>
@@ -186,7 +186,7 @@ function Post(props) {
   return data === undefined ? (
     <h1>404 Not Found</h1>
   ) : (
-    <Card>
+    <Card className="entry">
       <Card.Header>{data.title}</Card.Header>
       <Card.Body>
         <Card.Subtitle>{data.date}</Card.Subtitle>
@@ -216,13 +216,13 @@ function Friends(props) {
   );
 }
 
-function Posts({ posts }) {
+function Posts({ posts }) { //finds the Posts page using the [ posts ] array
   const match = useRouteMatch(); //reference useRouteMatch as match
   const findPostById = (id) => posts.filter((post) => post.id == id)[0];
 
   return (
     <div>
-      <h2>Posts</h2>
+      <h2>Memoires of The Fallen</h2>
 
       {posts.map((post, index) => {
         return (
@@ -240,7 +240,7 @@ function Posts({ posts }) {
           )}
         />
         <Route path={match.path}>
-          <h3>Please Select a Post</h3>
+          <h3>Select an Entry to be displayed here</h3>
         </Route>
       </Switch>
     </div>

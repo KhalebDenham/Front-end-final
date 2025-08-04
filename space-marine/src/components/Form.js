@@ -42,6 +42,7 @@ export default function Form({
         <option value="Captain">Captain</option>
         <option value="Chaplain">Chaplain</option>
         <option value="Librarian">Librarian</option>
+        <option value="Primarch">Primarch</option>
       </select>
 
       <label htmlFor="chapter">Chapter</label>
@@ -60,7 +61,7 @@ export default function Form({
       </select>
 
       <label htmlFor="saint">Sainthood</label>
-      <Checkbox
+      <Checkbox color="black"
         checked={newMarine.saint}
         onChange={(e) => handleSaint(e.target.checked)}
         inputProps={{ 'aria-label': 'Is this Marine a Saint?' }}

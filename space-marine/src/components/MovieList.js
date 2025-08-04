@@ -5,11 +5,9 @@ import blobImg from "../img/theBlob.jpg";
 import styles from "../styles/MovieList.module.css";
 import eclaireImg from "../img/eclaire.jpg";
 import choccyImg from "../img/choccyasp.jpg";
-import ReviewList from "./ReviewList";
 import theFlower from "../img/theFlower.jpg";
 import kissy from "../img/kissy.jpg";
 import astro from "../img/2gayastronauts.jpg";
-import Review from "./Review";
 import ReviewForm from "./ReviewForm";
 
 export default class MovieList extends React.Component {
